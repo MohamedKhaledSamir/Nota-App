@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box !important;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+header, .add-container .add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: rgb(250, 183, 57);
+}
+
+header {
+  width: 100%;
+  padding: 20px;
+}
+header h1 {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 2px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.add-container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: white;
+  z-index: 1000;
+  border-radius: 50%;
+  transition: 0.3s;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+.add-container.open {
+  overflow: unset;
+}
+.add-container.open .add-btn {
+  rotate: 45deg;
+}
+.add-container.open .add-options {
+  top: -150px;
+  opacity: 1;
+  pointer-events: all;
+}
+.add-container .add-btn {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.add-container .add-btn i {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.5rem;
+}
+.add-container .add-options {
+  position: absolute;
+  top: -180px;
+  left: -70px;
+  transition: 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+.add-container .add-options li {
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  margin: 8px;
+  cursor: pointer;
+  background-color: #fff;
+}
+.add-container .add-options li a {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.add-container .add-options li span {
+  white-space: nowrap;
+}
+
+.container {
+  display: grid;
+  padding: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 120px;
+}
+.container .note {
+  background-color: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  position: relative;
+}
+.container .note .header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 0;
+}
+.container .note .header .collabse {
+  position: relative;
+  z-index: 100;
+}
+.container .note .header .collabse.open .edit-options {
+  opacity: 1;
+  pointer-events: all;
+}
+.container .note .header .collabse i {
+  cursor: pointer;
+  font-size: 18px;
+}
+.container .note .header .collabse .edit-options {
+  position: absolute;
+  right: 20px;
+  top: -2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+.container .note .header .collabse .edit-options p {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 2px 7px;
+}
+.container .note .header .collabse .edit-options p.edit {
+  background-color: rgb(167, 252, 225);
+}
+.container .note .header .collabse .edit-options p.delete {
+  background-color: rgb(253, 70, 70);
+  color: rgb(255, 255, 255);
+}
+.container .note .content {
+  padding: 10px;
+  padding-inline: 20px;
+  width: 100%;
+  line-height: 1.7;
+}
+.container .note canvas {
+  height: 370px;
+  width: 100%;
+}

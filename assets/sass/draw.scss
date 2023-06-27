@@ -1,0 +1,72 @@
+@use "./globals" as *;
+
+body {
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+canvas {
+  border: 1px solid orange;
+}
+
+.title-save {
+  height: 100px;
+  width: 100%;
+  justify-content: center;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+
+  .title {
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 60%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .save-btn {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    border-left: none;
+
+    cursor: pointer;
+    padding: 7px 10px;
+    transition: 0.3s;
+    font-size: 1.2rem;
+
+    &:hover {
+      background-color: green;
+      color: white;
+    }
+  }
+}
+
+.tools {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+
+  .eraser,
+  .pen {
+    margin-bottom: 20px;
+
+    background-color: white;
+    @extend %center;
+    padding: 10px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &.active {
+      background-color: aquamarine;
+    }
+  }
+
+  i {
+    font-size: 20px;
+  }
+}

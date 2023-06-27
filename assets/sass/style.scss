@@ -1,0 +1,173 @@
+@use "./globals" as *;
+
+body {
+  background-color: rgb(250, 183, 57);
+}
+
+header {
+  width: 100%;
+  @extend %center;
+  padding: 20px;
+
+  h1 {
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 2px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+  }
+}
+
+.add-container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+  z-index: 1000;
+  border-radius: 50%;
+  transition: 0.3s;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+
+  &.open {
+    overflow: unset;
+
+    .add-btn {
+      rotate: 45deg;
+    }
+
+    .add-options {
+      top: -150px;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  .add-btn {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    @extend %center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+
+    i {
+      color: rgba(0, 0, 0, 0.87);
+      font-size: 1.5rem;
+    }
+  }
+
+  .add-options {
+    position: absolute;
+    top: -180px;
+    left: -70px;
+    transition: 0.3s;
+    opacity: 0;
+    pointer-events: none;
+
+    li {
+      width: fit-content;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      margin: 8px;
+      cursor: pointer;
+      background-color: #fff;
+
+      a {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      span {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.container {
+  display: grid;
+  padding: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 120px;
+
+  .note {
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: fit-content;
+    width: 100%;
+    position: relative;
+
+    .header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      padding-bottom: 0;
+
+      .collabse {
+        position: relative;
+        z-index: 100;
+
+        &.open {
+          .edit-options {
+            opacity: 1;
+            pointer-events: all;
+          }
+        }
+
+        i {
+          cursor: pointer;
+          font-size: 18px;
+        }
+
+        .edit-options {
+          position: absolute;
+          right: 20px;
+          top: -2px;
+          opacity: 0;
+          pointer-events: none;
+          transition: 0.3s;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-direction: column;
+          p {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            width: fit-content;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 2px 7px;
+
+            &.edit {
+              background-color: rgb(167, 252, 225);
+            }
+
+            &.delete {
+              background-color: rgb(253, 70, 70);
+              color: rgb(255, 255, 255);
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      padding: 10px;
+      padding-inline: 20px;
+      width: 100%;
+      line-height: 1.7;
+    }
+    canvas {
+      height: 370px;
+      width: 100%;
+    }
+  }
+}
