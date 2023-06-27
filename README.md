@@ -1,6 +1,6 @@
 # Nota
 
-- Live Site Url :
+- Live Site Url : https://mks-nota-app.netlify.app/
 
 #### Built With :
 
