@@ -48,10 +48,6 @@ body {
   position: relative;
 }
 
-canvas {
-  border-top: 1px solid orange;
-}
-
 .title-save {
   height: 100px;
   width: 100%;
